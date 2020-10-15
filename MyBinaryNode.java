@@ -5,25 +5,21 @@ public class MyBinaryNode<k extends Comparable<k>> implements INode<k> {
 	MyBinaryNode<k> leftNode;
 	MyBinaryNode<k> rightNode;
 	
+	public MyBinaryNode(k key) {
+		this.key = key;
+		this.leftNode = null;
+		this.rightNode = null;
+	}
+	
 	@Override
 	public void setKey(k key) {
-		// TODO Auto-generated method stub
+		this.key = key;
 		
 	}
 	@Override
 	public k getKey() {
-		// TODO Auto-generated method stub
-		return null;
+		return key;
 	}
-	@Override
-	public void setNext(INode<k> node) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public INode<k> getNext() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 } 
