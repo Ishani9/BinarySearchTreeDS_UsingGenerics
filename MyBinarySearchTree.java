@@ -30,5 +30,30 @@ public class MyBinarySearchTree<k extends Comparable<k>> {
 	public int getSize(MyBinaryNode<k> current) {
 		return (current == null) ? 0 : 1 + getSize(current.leftNode) + getSize(current.rightNode);
 	}
+	
+	
+	/**
+	 * UC 3
+	 * 
+	 * @param key
+	 * @return
+	 */
+	public boolean search(k key) {
+		return searchBST(root, key);
+	}
+
+	
+	public boolean searchBST(MyBinaryNode<k> current, k key) {
+		if (current == null) {
+			return false;
+		}
+		int compareResult = key.compareTo(current.key);
+		if (compareResult == 0)
+			return true;
+		else if (compareResult < 0)
+			return searchBST(current.leftNode, key);
+		else
+			return searchBST(current.rightNode, key);
+	}
 
 }
